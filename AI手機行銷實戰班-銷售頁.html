@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 手機行銷實戰班｜兩日實作班｜社團法人高雄市行銷人協會</title>
+<meta name="description" content="社團法人高雄市行銷人協會主辦，與 KK 老師課程團隊合作。一支手機 + AI，從內容產出到社群變現一次打通。兩日實作班，台北場與高雄場招生中。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1B33'/%3E%3Cpath d='M20 46V18h8l10 16V18h8v28h-8L28 26v20z' fill='%2322D3EE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap">
+<style>
+:root{
+  --bg-deep:#0A1B33; --bg-deep-2:#0F2747; --accent:#22D3EE; --cta:#FB8B2E; --cta-ink:#221505;
+  --ink:#101828; --muted:#526079; --paper:#F4F8FD; --card:#FFFFFF; --line:#DCE6F2;
+  --ph-bg:#FFF3DC; --ph-ink:#9A5B0A; --ph-line:#D97706;
+  --radius:14px; --shadow:0 10px 30px rgba(16,24,40,.08);
+  --font-sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --font-serif:"Noto Serif TC","Songti TC",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--ink);line-height:1.75;background:#fff;-webkit-font-smoothing:antialiased}
+@media(max-width:767px){body{padding-bottom:66px}}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
+section{padding-block:64px}
+@media(min-width:1024px){section{padding-block:92px}}
+h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
+.ph{background:var(--ph-bg);color:var(--ph-ink);border-bottom:2px dashed var(--ph-line);padding:0 6px;border-radius:6px;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:var(--cta-ink);font-weight:900;padding:14px 28px;border-radius:999px;font-size:16px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;font-family:inherit}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.5);color:#fff}
+.btn.sm{padding:9px 18px;font-size:14px}
+.btn.block{width:100%}
+.sec-head{max-width:760px;margin-bottom:36px}
+.sec-head .kicker{display:inline-block;color:var(--accent);font-weight:900;font-size:13px;letter-spacing:.2em;margin-bottom:10px}
+.sec-head h2{font-size:clamp(24px,3.6vw,36px)}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:16px}
+.dark-section{background:var(--bg-deep);color:#fff}
+.dark-section .sec-head p{color:rgba(255,255,255,.72)}
+.alt-section{background:var(--paper)}
+
+/* ===== 導覽 ===== */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14.5px;line-height:1.3;min-width:0}
+.logo .logo-mark{flex-shrink:0;width:34px;height:34px;border-radius:9px;background:var(--bg-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--muted)}
+.nav{display:none;align-items:center;gap:20px;font-size:15px;font-weight:700}
+.nav a:hover{color:var(--accent)}
+@media(min-width:960px){.nav{display:flex}}
+.nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.nav-toggle span{width:22px;height:2.5px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s}
+.mobile-menu{display:none;position:fixed;inset:64px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:16px 20px 24px;z-index:49;box-shadow:var(--shadow)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px 4px;font-weight:700;border-bottom:1px solid var(--line);font-size:16px}
+.mobile-menu .btn{margin-top:16px}
+@media(min-width:960px){.mobile-menu{display:none!important}}
+
+/* ===== Hero ===== */
+.hero{position:relative;background:var(--bg-deep);color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,27,51,.97) 0%,rgba(10,27,51,.82) 42%,rgba(10,27,51,.45) 72%,rgba(10,27,51,.62) 100%)}
+.hero-inner{position:relative;z-index:2;padding-block:84px 92px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:7px 16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.04em}
+.hero h1{font-size:clamp(32px,6vw,58px);margin-block:20px 14px;max-width:14em;font-family:var(--font-serif)}
+.hero h1 .hl{color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.2vw,20px);color:rgba(255,255,255,.88);max-width:34em}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.24);padding:8px 15px;border-radius:999px;font-size:14px;font-weight:700}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:34px;max-width:660px}
+@media(min-width:768px){.hero-facts{grid-template-columns:repeat(4,1fr)}}
+.fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:700}
+.fact b{display:block;font-size:11.5px;font-weight:700;opacity:.72;margin-bottom:2px;letter-spacing:.05em}
+
+/* ===== 痛點 ===== */
+.pain-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:768px){.pain-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.pain-grid{grid-template-columns:repeat(4,1fr)}}
+.pain{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.pain .ico{width:38px;height:38px;border-radius:10px;background:var(--paper);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.pain h3{font-size:16.5px;margin-bottom:6px}
+.pain p{font-size:14px;color:var(--muted)}
+
+/* ===== 五大能力 ===== */
+.cap-grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:768px){.cap-grid{grid-template-columns:repeat(3,1fr)}}
+.cap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+.cap::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--cta))}
+.cap .num{font-family:var(--font-serif);font-weight:900;font-size:15px;color:var(--accent)}
+.cap h3{font-size:18px;margin-block:10px 6px}
+.cap p{font-size:14px;color:var(--muted)}
+
+/* ===== 課程大綱 ===== */
+.syl-grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:900px){.syl-grid{grid-template-columns:1fr 1fr}}
+.day{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden}
+.day::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--accent)}
+.day h3{font-size:21px;margin-top:6px}
+.day .day-label{color:var(--accent);font-weight:900;font-size:13px;letter-spacing:.16em}
+.day .day-desc{font-size:14px;color:var(--muted);margin-top:4px}
+.day ul{margin-top:16px;display:grid;gap:12px}
+.day li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.day li svg{flex-shrink:0;margin-top:4px}
+.tools{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--muted)}
+.tools b{color:var(--ink)}
+.syl-note{margin-top:22px;font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.syl-note svg{flex-shrink:0;margin-top:2px}
+
+/* ===== 講師 ===== */
+.teacher-grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:768px){.teacher-grid{grid-template-columns:repeat(2,1fr)}}
+.teacher{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.avatar{width:80px;height:80px;border-radius:50%;background:var(--bg-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;margin-bottom:14px;border:3px solid var(--line);flex-shrink:0;overflow:hidden}
+.teacher .avatar img{width:100%;height:100%;object-fit:cover}
+.teacher h3{font-size:19px}
+.teacher .role{color:var(--accent);font-weight:700;font-size:14px;margin-top:2px}
+.teacher .bio{font-size:14px;color:var(--muted);margin-top:10px}
+.teacher ul{margin-top:12px;padding-left:18px;list-style:disc;font-size:14px;color:var(--muted);display:grid;gap:6px}
+.teacher .ph-note{margin-top:14px;font-size:13px}
+
+/* ===== 適合對象 ===== */
+.who-grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:768px){.who-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.who-grid{grid-template-columns:repeat(4,1fr)}}
+.who{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.who .num{font-family:var(--font-serif);font-weight:900;font-size:14px;color:var(--accent)}
+.who h3{font-size:17px;margin-block:8px 6px}
+.who p{font-size:14px;color:var(--muted)}
+
+/* ===== 價格 ===== */
+.price-band{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:900px){.price-band{grid-template-columns:1.15fr .85fr;align-items:start}}
+.price-card{background:var(--bg-deep);color:#fff;border-radius:20px;padding:32px;position:relative;overflow:hidden}
+.price-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--accent),var(--cta))}
+.price-card .badge{display:inline-block;background:var(--cta);color:var(--cta-ink);font-size:12.5px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:.05em}
+.price-card h3{font-size:22px;margin-block:14px 8px}
+.price-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-old{text-decoration:line-through;color:rgba(255,255,255,.55);font-size:16px}
+.price-now{font-size:clamp(32px,5vw,46px);font-weight:900;line-height:1.1}
+.price-now .unit{font-size:16px;font-weight:700;color:rgba(255,255,255,.7);margin-left:4px}
+.price-note{font-size:13.5px;color:rgba(255,255,255,.7);margin-top:4px}
+.price-includes{margin-top:20px;display:grid;gap:10px;font-size:15px}
+.price-includes li{display:flex;gap:10px;align-items:flex-start}
+.price-includes svg{flex-shrink:0;margin-top:4px;color:var(--accent)}
+.earlybird{display:inline-flex;align-items:center;gap:8px;background:var(--ph-bg);color:var(--ph-ink);border:1px dashed var(--ph-line);padding:9px 15px;border-radius:12px;font-size:14px;font-weight:700;margin-top:18px}
+.price-cta{margin-top:24px}
+.include-panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.include-panel h4{font-size:17px;margin-bottom:14px}
+.include-panel ul{display:grid;gap:11px;font-size:15px}
+.include-panel li{display:flex;gap:10px;align-items:flex-start}
+.include-panel svg{flex-shrink:0;margin-top:4px;color:var(--accent)}
+
+/* ===== 見證 ===== */
+.review-grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:768px){.review-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.review-grid{grid-template-columns:repeat(3,1fr)}}
+.review{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:14px}
+.review .stars{color:var(--cta);display:flex;gap:3px}
+.review .quote{font-size:15px;color:rgba(255,255,255,.92);flex:1}
+.review .author{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;border-top:1px dashed var(--line);padding-top:14px}
+.avatar-sm{width:38px;height:38px;border-radius:50%;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--muted);font-size:13px;flex-shrink:0}
+.review .ph-line{background:var(--ph-bg);color:var(--ph-ink);border-radius:8px;padding:8px 12px;font-size:13.5px;font-weight:700;line-height:1.6}
+
+/* ===== FAQ ===== */
+.faq{display:grid;gap:12px;max-width:860px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.faq-item summary{cursor:pointer;padding:16px 20px;font-weight:700;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .chev{flex-shrink:0;transition:transform .2s;color:var(--muted)}
+.faq-item[open] summary .chev{transform:rotate(45deg)}
+.faq-body{padding:0 20px 18px;color:var(--muted);font-size:15px}
+
+/* ===== 報名表單 ===== */
+.apply-band{background:var(--bg-deep);color:#fff}
+.form-card{background:#fff;color:var(--ink);border-radius:20px;padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.form-card h3{font-size:20px;margin-bottom:6px}
+.form-card .form-sub{font-size:14px;color:var(--muted);margin-bottom:22px}
+.form-grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:768px){.form-grid{grid-template-columns:1fr 1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:14px;font-weight:700}
+.field .req::after{content:" *";color:#E5484D}
+.field input,.field select,.field textarea{border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit;background:#FBFCFE;color:var(--ink);width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.field textarea{min-height:80px;resize:vertical}
+.radio-group{display:flex;gap:18px;flex-wrap:wrap}
+.radio-group label{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500;cursor:pointer}
+.radio-group input{accent-color:var(--accent);width:auto}
+.form-note{font-size:13px;color:var(--muted);margin-top:16px}
+.privacy{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.8;border-top:1px dashed var(--line);padding-top:14px}
+#formThanks{display:none}
+.thanks-card{background:var(--ph-bg);border:1px dashed var(--ph-line);border-radius:16px;padding:34px 24px;text-align:center}
+.thanks-card .big{font-size:22px;font-weight:900;color:var(--ph-ink);margin-bottom:10px}
+.thanks-card p{font-size:15px;color:var(--ph-ink);margin-bottom:6px}
+
+/* ===== 頁尾 ===== */
+.site-footer{background:var(--bg-deep);color:rgba(255,255,255,.78);padding-block:56px 28px}
+.footer-grid{display:grid;gap:28px;grid-template-columns:1fr}
+@media(min-width:768px){.footer-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.site-footer h4{color:#fff;font-size:15px;margin-bottom:12px}
+.site-footer ul{display:grid;gap:8px;font-size:14px}
+.site-footer a:hover{color:var(--accent)}
+.footer-brand .logo-mark{margin-bottom:10px}
+.copyright{margin-top:32px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;font-size:13px;color:rgba(255,255,255,.5)}
+
+/* ===== 手機固定 CTA ===== */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-cta .price{font-weight:900;font-size:16px;line-height:1.25}
+.sticky-cta .price small{display:block;font-size:11px;color:var(--muted);font-weight:700}
+@media(min-width:768px){.sticky-cta{display:none}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">行</span>
+      <span>高雄市行銷人協會<small>社團法人高雄市行銷人協會</small></span>
+    </a>
+    <nav class="nav" aria-label="主選單">
+      <a href="#course">課程大綱</a>
+      <a href="#teacher">講師</a>
+      <a href="#who">適合對象</a>
+      <a href="#price">價格方案</a>
+      <a href="#faq">常見問題</a>
+      <a class="btn sm" href="#apply">立即報名</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#course">課程大綱</a>
+  <a href="#teacher">講師</a>
+  <a href="#who">適合對象</a>
+  <a href="#price">價格方案</a>
+  <a href="#faq">常見問題</a>
+  <a class="btn block" href="#apply">立即報名</a>
+</div>
+
+<main id="top">
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <img class="hero-bg" src="assets/hero-ai.jpg" alt="AI 手機行銷實戰班主視覺">
+  <div class="hero-overlay"></div>
+  <div class="wrap hero-inner">
+    <span class="hero-eyebrow">社團法人高雄市行銷人協會 × KK 老師課程團隊 主辦</span>
+    <h1>AI 手機行銷實戰班<br><span class="hl">一支手機 + AI</span>，打通內容、工具與成交</h1>
+    <p class="sub">兩日實作班：從內容產出到社群變現的 AI 全攻略。不露臉、不會剪片、沒有設計底子，也能帶走一套立刻上線的內容系統。</p>
+    <div class="chips">
+      <span class="chip">文案・設計・影音一次學</span>
+      <span class="chip">不露臉也能經營</span>
+      <span class="chip">帶走可複製的內容系統</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn" href="#apply">立即報名</a>
+      <a class="btn ghost" href="#course">先看課程大綱</a>
+    </div>
+    <div class="hero-facts">
+      <div class="fact"><b>開課日期</b><span>台北場：10/17–18・11/19–20｜高雄場：確認中</span></div>
+      <div class="fact"><b>課程時段</b><span>09:00–16:00（兩天）</span></div>
+      <div class="fact"><b>上課地點</b><span>台北場：板橋｜高雄場：確認中</span></div>
+      <div class="fact"><b>課程價格</b><span>NT$39,800（原價）</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 痛點 ===== -->
+<section class="alt-section" id="pain">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">你是不是也這樣？</span>
+      <h2>AI 人人會用，但能「變現」的人不到兩成</h2>
+      <p>工具越學越多，成果卻一直卡關。這不是你不夠努力，而是缺少一套把 AI 接上生意的系統方法。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M4.9 4.9l14.2 14.2"/></svg></span>
+        <h3>用 AI 只會聊天，做不出能賣的內容</h3>
+        <p>問了一堆問題，產出卻不能直接用，花時間卻看不到成果。</p>
+      </div>
+      <div class="pain">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <h3>想經營社群，卻不會設計、不會剪片</h3>
+        <p>封面做不出、影片剪不動，內容產出卡在最後一哩路。</p>
+      </div>
+      <div class="pain">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16M4 6h16M4 14h16M4 18h16"/><path d="M12 6v12"/></svg></span>
+        <h3>工具東拼西湊，學了一堆用不上</h3>
+        <p>App 裝了一整排，沒有一套流程串起來，最後全變裝飾。</p>
+      </div>
+      <div class="pain">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+        <h3>沒時間露臉，也想有第二份收入</h3>
+        <p>本業忙，又想靠內容與社群多一條變現管道，不知從何開始。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 課程價值：五大能力 ===== -->
+<section class="dark-section" id="value">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">兩天學會五大核心能力</span>
+      <h2>不是「認識 AI」，而是「用 AI 做生意」</h2>
+      <p>五大能力一次串接，課程結束時，你帶走的是一套能持續運作的內容產出系統。</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap">
+        <span class="num">01</span>
+        <h3>文案生成力</h3>
+        <p>一鍵產出社群貼文、腳本大綱、產品文案，從靈感到可發布的成品。</p>
+      </div>
+      <div class="cap">
+        <span class="num">02</span>
+        <h3>資料統整力</h3>
+        <p>對話式資料搜尋、自動摘要與重點整理，把雜訊變成可用的情報。</p>
+      </div>
+      <div class="cap">
+        <span class="num">03</span>
+        <h3>圖像設計力</h3>
+        <p>AI 製圖、去背、電商封面與主視覺，不用設計底子也能出手。</p>
+      </div>
+      <div class="cap">
+        <span class="num">04</span>
+        <h3>人設強化力</h3>
+        <p>數位分身與聲音仿真，建立你的品牌互動感，人沒上線也有產能。</p>
+      </div>
+      <div class="cap">
+        <span class="num">05</span>
+        <h3>實戰應用力</h3>
+        <p>直接串接社群與表單系統，上完課就能開始上線、承接名單。</p>
+      </div>
+    </div>
+    <div style="margin-top:34px">
+      <a class="btn" href="#apply">立即報名，帶走這套系統</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 課程大綱 ===== -->
+<section id="course">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">課程大綱</span>
+      <h2>兩天，從零到上線的完整路徑</h2>
+      <p>從工具串接、內容產出到成果發表，每堂都有實際操作與範例，不是聽課，是做作品。</p>
+    </div>
+    <div class="syl-grid">
+      <article class="day">
+        <span class="day-label">DAY 1</span>
+        <h3>基礎建構：工具串接與內容產出</h3>
+        <p class="day-desc">把 AI 工具接成你的生產線，先學會穩定產出。</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>AI 工具總覽與提示詞實作：ChatGPT、Gemini 一次上手</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>社群文案、企劃與腳本的自動化流程</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>圖像設計與封面實作：AI 製圖、去背、主視覺</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>建立你的內容產出 SOP：從靈感、草稿到發佈</li>
+        </ul>
+        <p class="tools"><b>實作工具：</b>ChatGPT、Gemini、Canva／Gamma 同類工具與模板</p>
+      </article>
+      <article class="day">
+        <span class="day-label">DAY 2</span>
+        <h3>影音變現：短影音、聲音與名單承接</h3>
+        <p class="day-desc">把內容接上變現，建立能持續優化的成長迴圈。</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB8B2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>短影音腳本、素材生成與剪輯實作</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB8B2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>AI 音樂、配音與音效：讓內容更有層次</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB8B2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>社群排程與名單承接：LINE／表單自動化</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FB8B2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>成果發表與下一步：帶走自己的品牌圖像包與內容</li>
+        </ul>
+        <p class="tools"><b>實作工具：</b>CapCut 同類剪輯、Suno 同類音樂生成與排程工具</p>
+      </article>
+    </div>
+    <p class="syl-note">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#526079" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      課程時段為 09:00–16:00，兩天完整實作。現場提供實作範例與模板，課堂即可產出可直接上線的作品。
+    </p>
+  </div>
+</section>
+<!-- ===== 講師 ===== -->
+<section class="alt-section" id="teacher">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">講師陣容</span>
+      <h2>由 KK 老師課程團隊合作授課</h2>
+      <p>本課程由協會與 KK 老師課程團隊合作開辦，實際授課講師與完整資歷以協會公告為準。</p>
+    </div>
+    <div class="teacher-grid">
+      <article class="teacher">
+        <div class="avatar"><img src="assets/teacher-kk.jpg" alt="KK 老師"></div>
+        <h3>KK 老師</h3>
+        <p class="role">電商直播培訓教母・破風者品牌創始人（合作團隊）</p>
+        <p class="bio">20 年商業實戰與變現經驗，近年聚焦 AI 工具應用，協助企業將內容產出、人力配置與銷售流程自動化；已協助超過 17,000 名學員運用社群媒體、直播帶貨與 AI 商務技術，實現自媒體變現與營收成長。（資歷與數據來源：原合作單位課程頁）</p>
+        <ul>
+          <li>國家發展委員會地方創生通路鏈結輔導計畫 講師</li>
+          <li>亞威 AI 商務學院 策略合作機構及認證講師</li>
+          <li>兩岸青年直播電商創業交流大會 台灣代表</li>
+          <li>具 ISO 17024 AI 提示工程師證照 資格</li>
+          <li>卓越雜誌 封面專訪人物・姊妹淘專欄作家</li>
+        </ul>
+      </article>
+      <article class="teacher">
+        <div class="avatar"><img src="assets/teacher-adam.png" alt="Adam 老師"></div>
+        <h3>Adam 老師</h3>
+        <p class="role">生成式 AI × 品牌行銷實戰講師（合作團隊）</p>
+        <p class="bio">品牌策略與數位行銷實戰顧問，專精品牌定位、形象設計與行銷策略；擅長將生成式 AI 工具轉化為企業與個人可立即上手的數位化解方。（資歷來源：原合作單位課程頁）</p>
+        <ul>
+          <li>華翼品牌形象設計 品牌顧問</li>
+          <li>君策科技 社群行銷顧問</li>
+          <li>金屬工業研究發展中心 × AI 認證培訓講師</li>
+          <li>屏東縣政府 × 生成式 AI 公務培訓講師</li>
+          <li>岡山農會 × 農業數位轉型專案講師</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 適合對象 ===== -->
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">適合誰來上</span>
+      <h2>這堂課是為這樣的人設計的</h2>
+      <p>不需要會寫程式、不需要設計背景，只要願意帶著手機來實作。</p>
+    </div>
+    <div class="who-grid">
+      <div class="who">
+        <span class="num">01</span>
+        <h3>想快手上手 AI 的行銷人</h3>
+        <p>不想再零散摸索，兩天一次整合文案、設計、影音的完整流程。</p>
+      </div>
+      <div class="who">
+        <span class="num">02</span>
+        <h3>沒有專業背景的新手</h3>
+        <p>不會設計、不會剪片也沒關係，跟著 SOP 與範例一步步完成作品。</p>
+      </div>
+      <div class="who">
+        <span class="num">03</span>
+        <h3>想斜槓或做第二專長的人</h3>
+        <p>從社群經營到自媒體變現，帶走一套能持續運作的內容系統。</p>
+      </div>
+      <div class="who">
+        <span class="num">04</span>
+        <h3>中小企業主與一人公司</h3>
+        <p>用 AI 降低內容產出成本，一個人也能撐起品牌的日常曝光。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 價格方案 ===== -->
+<section class="alt-section" id="price">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">價格方案</span>
+      <h2>兩日實作班・早鳥優惠開放中</h2>
+      <p>以下為原合作單位課程定價，高雄場正式報名以協會公告為準。</p>
+    </div>
+    <div class="price-band">
+      <div class="price-card">
+        <span class="badge">兩日實作班</span>
+        <h3>AI 手機行銷實戰班</h3>
+        <div class="price-line">
+          <span class="price-old">兩天完整實作課程</span>
+          <span class="price-now">NT$39,800<span class="unit">原價</span></span>
+        </div>
+        <p class="price-note">價格含兩天課程、實作教材與模板工具包；詳細內容以報名頁公告為準。</p>
+        <ul class="price-includes">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>兩天完整實作課程（09:00–16:00）</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>實作教材、範例與模板工具包</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>課後交流群與問題諮詢<span class="ph" style="background:transparent;border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.6)">【權益待確認】</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>課堂產出可直接上線的品牌圖像包與內容</li>
+        </ul>
+        <div class="earlybird">早鳥優惠：<span class="ph">【早鳥方案與截止日待協會公告】</span></div>
+        <div class="price-cta">
+          <a class="btn block" href="#apply">立即報名</a>
+        </div>
+      </div>
+      <div class="include-panel">
+        <h4>報名須知</h4>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>上課地點：台北場（板橋）／高雄場（高雄市），詳細場地開課前以 Email 通知</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>發票：可開立統一編號發票<span class="ph">【統編資訊待確認】</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>名額有限，額滿即止<span class="ph">【每場名額待確認】</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>退費辦法：<span class="ph">【依協會退費規定，待公告】</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 學員見證 ===== -->
+<section class="dark-section" id="review">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">學員怎麼說</span>
+      <h2>課程好壞，讓學員自己說</h2>
+      <p>以下見證轉錄自原合作單位課程頁之公開學員回饋，並經協會確認於高雄場使用。</p>
+    </div>
+    <div class="review-grid">
+      <div class="review" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)">
+        <div class="stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="quote">「謝謝KK老師的教導，從小白開始學習如何直播，也謝謝老師的認可。肯定會再專研這個賽道！」</p>
+        <div class="author"><span class="avatar-sm">R</span>Reymond Chin</div>
+      </div>
+      <div class="review" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)">
+        <div class="stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="quote">「謝謝KK老師！感謝有您打開我們對直播的認知，真是收穫滿滿，直播真的很好玩！」</p>
+        <div class="author"><span class="avatar-sm">W</span>WaWa</div>
+      </div>
+      <div class="review" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)">
+        <div class="stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="quote">「謝謝KK老師讓我更深的了解如何完成一場直播帶貨應該如何呈現！希望接下來有更多機會和老師參與更多的互動。」</p>
+        <div class="author"><span class="avatar-sm">潔</span>小潔</div>
+      </div>
+    </div>
+    <p style="margin-top:22px;font-size:13.5px;color:rgba(255,255,255,.6)">＊原合作單位課程頁顯示，已協助超過 1.7 萬位來自全世界的創業家、品牌高階經理人、直播主、網紅與藝人成為學員（數據來源：原合作單位課程頁）。</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="alt-section" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">常見問題</span>
+      <h2>報名前，你可能想先知道</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>完全沒有用過 AI，可以上嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq-body">可以。課程從工具操作開始，按 SOP 與範例一步步實作，0 基礎也能在兩天內產出可上線的作品。</p>
+      </details>
+      <details class="faq-item">
+        <summary>需要帶電腦嗎？用手機可以嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq-body">課程以手機實作為核心設計；若有平板或筆電亦可攜帶。</p>
+      </details>
+      <details class="faq-item">
+        <summary>上完課真的會有成品嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq-body">會。課堂中會完成你的品牌圖像包、社群文案與短影音素材，課程結束即可直接運用於行銷。</p>
+      </details>
+      <details class="faq-item">
+        <summary>可以開立發票嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq-body">可以。報名時可填寫統一編號與抬頭，由協會開立。<span class="ph">【開立細節待確認】</span></p>
+      </details>
+      <details class="faq-item">
+        <summary>報名後臨時無法參加，可以退費嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq-body">退費依協會公告之退費辦法辦理，請於報名前詳閱。<span class="ph">【退費辦法連結待提供】</span></p>
+      </details>
+      <details class="faq-item">
+        <summary>課後有問題可以找誰？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq-body">可透過課後交流群提問，或聯繫協會課程窗口。<span class="ph">【課後權益與聯絡方式待確認】</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 報名表單 ===== -->
+<section class="apply-band" id="apply">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">名額有限・立即卡位</span>
+      <h2>報名 AI 手機行銷實戰班</h2>
+      <p>填寫下方資料完成報名意願登記，協會將以 Email 通知繳費與開課資訊。</p>
+    </div>
+    <div class="form-card" id="formCard">
+      <h3>報名資料</h3>
+      <p class="form-sub">＊為必填欄位。此表單為展示版本，正式上線將串接協會指定報名系統。</p>
+      <form id="applyForm" novalidate>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="f-session" class="req">報名場次</label>
+            <select id="f-session" name="session" required>
+              <option value="">請選擇報名場次</option>
+              <optgroup label="台北場">
+                <option value="tp-1017">10/17–18（六日）09:00–16:00・板橋</option>
+                <option value="tp-1119">11/19–20（四五）09:00–16:00・板橋</option>
+              </optgroup>
+              <optgroup label="高雄場">
+                <option value="kh-tbd" disabled>高雄場・開課日期確認中（公告後開放報名）</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-name" class="req">姓名</label>
+            <input id="f-name" name="name" type="text" placeholder="請輸入姓名" required>
+          </div>
+          <div class="field">
+            <label for="f-phone" class="req">手機</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="0912-345-678" required>
+          </div>
+          <div class="field">
+            <label for="f-email" class="req">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="f-company">公司與職稱</label>
+            <input id="f-company" name="company" type="text" placeholder="公司名稱／職稱（選填）">
+          </div>
+          <div class="field">
+            <label>發票需求</label>
+            <div class="radio-group">
+              <label><input type="radio" name="invoice" value="no" checked> 不需要</label>
+              <label><input type="radio" name="invoice" value="yes"> 需要（請填統編）</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-taxid">統一編號／抬頭</label>
+            <input id="f-taxid" name="taxid" type="text" placeholder="統編與抬頭（需要發票時填寫）">
+          </div>
+          <div class="field">
+            <label>餐飲需求</label>
+            <div class="radio-group">
+              <label><input type="radio" name="meal" value="meat" checked> 葷食</label>
+              <label><input type="radio" name="meal" value="veg"> 素食</label>
+              <label><input type="radio" name="meal" value="none"> 不需餐點</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-note">備註</label>
+            <input id="f-note" name="note" type="text" placeholder="其他需求（選填）">
+          </div>
+          <div class="field full">
+            <button class="btn block" type="submit">送出報名</button>
+          </div>
+        </div>
+      </form>
+      <p class="form-note">或直接前往報名連結：<span class="ph">【報名連結待提供】</span>（正式上線後將於此放置協會指定報名頁）</p>
+      <p class="privacy"><b>隱私權說明：</b>您提供的個人資料僅供社團法人高雄市行銷人協會用於本課程之報名聯繫、繳費通知與課程行政服務，不會提供予無關之第三人。送出即表示您已同意本協會依個人資料保護法蒐集、處理與利用上述資料；如需查詢或刪除，請聯繫協會課程窗口。<span class="ph">【完整隱私權政策連結待提供】</span></p>
+    </div>
+    <div class="thanks-card" id="formThanks" role="status">
+      <p class="big">報名已送出，感謝您！</p>
+      <p>協會將於近日以 Email 與您聯繫確認場次與繳費方式。</p>
+      <p style="font-size:13px;margin-top:10px">若 3 個工作天內未收到通知，請聯繫協會課程窗口。<span class="ph">【聯絡方式待確認】</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 頁尾 ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-mark" style="width:40px;height:40px;border-radius:10px;background:#fff;color:var(--bg-deep);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px">行</span>
+        <h4 style="margin-top:12px;color:#fff">社團法人高雄市行銷人協會</h4>
+        <p style="font-size:14px">與 KK 老師課程團隊合作，在高雄開辦 AI 與直播帶貨實作課程。</p>
+      </div>
+      <div>
+        <h4>課程</h4>
+        <ul>
+          <li><a href="#course">課程大綱</a></li>
+          <li><a href="#price">價格方案</a></li>
+          <li><a href="#apply">立即報名</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>聯絡我們</h4>
+        <ul>
+          <li>地址：<span class="ph" style="background:transparent;border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6)">【協會地址待確認】</span></li>
+          <li>電話：<span class="ph" style="background:transparent;border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6)">【聯絡電話待確認】</span></li>
+          <li>Email：<span class="ph" style="background:transparent;border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6)">【聯絡信箱待確認】</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 社團法人高雄市行銷人協會 All Rights Reserved. 本頁面為銷售頁展示版，正式內容以協會公告為準。</div>
+  </div>
+</footer>
+
+<!-- ===== 手機固定 CTA ===== -->
+<div class="sticky-cta">
+  <div class="price">NT$39,800<small>兩日實作班・原價</small></div>
+  <a class="btn" href="#apply">立即報名</a>
+</div>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle');
+  var menu=document.getElementById('mobileMenu');
+  toggle.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');});
+  });
+  var form=document.getElementById('applyForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var card=document.getElementById('formCard');
+    var thanks=document.getElementById('formThanks');
+    card.style.display='none';
+    thanks.style.display='block';
+    thanks.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+
+</body>
+</html>
