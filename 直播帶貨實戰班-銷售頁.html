@@ -175,6 +175,15 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
 .tier-row span{font-size:20px;font-weight:900;color:var(--cta)}
 .tier-row small{font-size:12px;color:rgba(255,255,255,.6);margin-left:auto;text-align:right}
 .tier-row.hot{border-color:var(--cta);background:rgba(255,255,255,.09)}
+.share-band{background:var(--paper)}
+.share-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.share-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;box-shadow:var(--shadow)}
+.share-tag{display:inline-block;font-size:12px;font-weight:800;color:var(--cta-ink);background:var(--cta);border-radius:999px;padding:3px 10px;margin-bottom:12px;letter-spacing:.04em}
+.share-card h4{margin:0 0 6px;font-size:16px}
+.share-card p{margin:0 0 4px;font-size:14px;font-weight:700}
+.share-card .share-topic{margin-top:8px;font-size:13px;color:var(--muted);font-weight:500}
+.share-note{margin-top:18px;font-size:13px;color:var(--muted);text-align:center}
+@media(max-width:760px){.share-grid{grid-template-columns:1fr}}
 .price-includes{margin-top:20px;display:grid;gap:10px;font-size:15px}
 .price-includes li{display:flex;gap:10px;align-items:flex-start}
 .price-includes svg{flex-shrink:0;margin-top:4px;color:var(--accent)}
@@ -258,6 +267,7 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
       <span>高雄市行銷人協會<small>社團法人高雄市行銷人協會</small></span>
     </a>
     <nav class="nav" aria-label="主選單">
+      <a href="#share">線上分享會</a>
       <a href="#course">課程大綱</a>
       <a href="#teacher">講師</a>
       <a href="#who">適合對象</a>
@@ -271,6 +281,7 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
   </div>
 </header>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#share">線上分享會</a>
   <a href="#course">課程大綱</a>
   <a href="#teacher">講師</a>
   <a href="#who">適合對象</a>
@@ -302,6 +313,41 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
       <div class="fact"><b>課程時段</b><span>09:00–17:00（兩天）</span></div>
       <div class="fact"><b>上課地點</b><span>台北場：台北｜高雄場：高雄市（場地確認中）</span></div>
       <div class="fact"><b>課程價格</b><span>早鳥 NT$69,800 起</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 線上分享會 ===== -->
+<section class="share-band" id="share">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">免費線上分享會・開放報名</span>
+      <h2>開課前，先來免費聽一場</h2>
+      <p>60 分鐘線上導覽：課程精華搶先看、實戰示範與 Q&amp;A。聽完再決定要不要報名，完全無壓力。</p>
+    </div>
+    <div class="share-grid">
+      <div class="share-card">
+        <span class="share-tag">免費・線上</span>
+        <h4>分享會 ①</h4>
+        <p>2027/1/7（四）19:30–20:30</p>
+        <p class="share-topic">直播成交 SOP 大公開：素人如何第一次就開播</p>
+      </div>
+      <div class="share-card">
+        <span class="share-tag">免費・線上</span>
+        <h4>分享會 ②</h4>
+        <p>2027/1/20（三）19:30–20:30</p>
+        <p class="share-topic">從 0 到開播：兩天課程的實戰流程拆解</p>
+      </div>
+      <div class="share-card">
+        <span class="share-tag">免費・線上</span>
+        <h4>分享會 ③</h4>
+        <p>2027/2/18（四）19:30–20:30</p>
+        <p class="share-topic">早鳥最後名額：簽約直播主機制與報名權益說明</p>
+      </div>
+    </div>
+    <p class="share-note">報名後將以 Email／Line 寄送會議連結，每場名額有限；分享會全程免費，報名正式課程者仍享完整早鳥優惠。</p>
+    <div style="margin-top:20px;text-align:center">
+      <a class="btn" href="#apply">免費報名線上分享會</a>
     </div>
   </div>
 </section>
@@ -565,7 +611,7 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
     <div class="sec-head">
       <span class="kicker">價格方案</span>
       <h2>兩日實戰班・早鳥優惠開放中</h2>
-      <p>早鳥／晚鳥／一般三階段定價；協會會員一律享早鳥價，團體報名一律享晚鳥價。</p>
+      <p>早鳥／晚鳥／一般三階段定價；協會會員一律早鳥價，雙人合報／2 人以上同行一律晚鳥價（不限時間）。</p>
     </div>
     <div class="price-band">
       <div class="price-card">
@@ -576,9 +622,9 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
           <span class="price-now">NT$69,800<span class="unit">早鳥價 起</span></span>
         </div>
         <p class="price-note">價格含兩天課程、實戰資源包、課後一個月群組陪跑與兩日午餐；每梯次上限 50 名，額滿截止。</p>
-        <div class="tier-row hot"><b>早鳥價</b><span>NT$69,800</span><small>開課 4 週以上報名</small></div>
-        <div class="tier-row"><b>晚鳥價</b><span>NT$74,800</span><small>開課 3 週以上報名</small></div>
-        <div class="tier-row"><b>一般價</b><span>NT$79,800</span><small>其餘期間報名</small></div>
+        <div class="tier-row hot"><b>早鳥價</b><span>NT$69,800</span><small>至 2/6</small></div>
+        <div class="tier-row"><b>晚鳥價</b><span>NT$74,800</span><small>2/7–2/13</small></div>
+        <div class="tier-row"><b>一般價</b><span>NT$79,800</span><small>2/14–3/3</small></div>
         <ul class="price-includes">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>兩天完整實戰課程（09:00–17:00）</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>第二天現場直播實戰與講師覆盤</li>
@@ -586,7 +632,7 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>課後一個月群組陪跑（高雄場預計至 2027/4/5）</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>含兩日午餐</li>
         </ul>
-        <div class="earlybird">協會會員：一律早鳥價 ｜ 團體報名（2 人以上）：一律晚鳥價</div>
+        <div class="earlybird">協會會員：一律早鳥價 ｜ 雙人合報／2 人以上同行：一律晚鳥價（不限時間）</div>
         <div class="price-cta">
           <a class="btn block" href="#apply">立即報名</a>
         </div>
@@ -658,6 +704,10 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
     </div>
     <div class="faq">
       <details class="faq-item">
+        <summary>線上分享會要收費嗎？內容是什麼？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p class="faq-body">免費。60 分鐘線上進行，會帶你實際看課程精華與實戰示範，並開放 QA；報名後以 Email／Line 寄送會議連結，聽完再決定是否報名正式課程。</p>
+      </details>
+      <details class="faq-item">
         <summary>完全沒直播過，可以上嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <p class="faq-body">可以。課程就是為 0 基礎設計，Day 1 打基礎、Day 2 就實戰開播，講師會一步步帶。</p>
       </details>
@@ -679,7 +729,7 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
       </details>
       <details class="faq-item">
         <summary>協會會員、團體報名有優惠嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="faq-body">協會會員一律享早鳥價；2 人以上同行即屬團體報名，一律享晚鳥價，與報名時間長短無關。</p>
+        <p class="faq-body">協會會員一律享早鳥價；2 人以上同行／雙人合報即屬團體報名，一律享晚鳥價，與報名時間長短無關。</p>
       </details>
       <details class="faq-item">
         <summary>報名後多久要完成繳費？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -707,9 +757,14 @@ h1,h2,h3{font-weight:900;line-height:1.28;letter-spacing:.01em}
       <form id="applyForm" novalidate>
         <div class="form-grid">
           <div class="field full">
-            <label for="f-session" class="req">報名場次</label>
+            <label for="f-session" class="req">報名項目／場次</label>
             <select id="f-session" name="session" required>
-              <option value="">請選擇報名場次</option>
+              <option value="">請選擇報名項目</option>
+              <optgroup label="線上分享會（免費）">
+                <option value="sh-1">線上分享會① 2027/1/7（四）19:30–20:30</option>
+                <option value="sh-2">線上分享會② 2027/1/20（三）19:30–20:30</option>
+                <option value="sh-3">線上分享會③ 2027/2/18（四）19:30–20:30</option>
+              </optgroup>
               <optgroup label="台北場">
                 <option value="tp-1003">10/3–4（六日）09:00–17:00</option>
                 <option value="tp-1105">11/5–6（四五）09:00–17:00・台北</option>
